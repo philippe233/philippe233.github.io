@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>post picture</title>
+      <link href="/2018/03/27/post-picture/"/>
+      <url>/2018/03/27/post-picture/</url>
+      <content type="html"><![CDATA[<p>Totoro<br><img src="/2018/03/27/post-picture/download.jpg" class="Totoro"><br></p>content]]></content>
+      
+      <categories>
+          
+          <category> Film </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Film </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>boyhood</title>
+      <link href="/2018/03/15/boyhood/"/>
+      <url>/2018/03/15/boyhood/</url>
+      <content type="html"><![CDATA[<p>教程<br><blockquote><p>史上最浅显易懂的Git教程！</p><footer><strong>Liaoxuefeng</strong><cite><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></cite></footer></blockquote><br>Code<br><figure class="highlight bash"><figcaption><span>useradd.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">for</span> (i=0,i++,i&lt;a)</span><br><span class="line"><span class="keyword">do</span> i=i++;</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$i</span>;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p><p>Link<br><a href="http://www.freebuf.com/news/166362.html" title="IETF批准TLS 1.3为互联网标准" target="_blank" rel="noopener">互联网工程任务组（IETF）已正式批准TLS 1.3作为传输层安全（TLS）协议的下一个主要版本，IETF组织是专门批准互联网标准和协议的组织。</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Other </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Other </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/03/15/hello-world/"/>
+      <url>/2018/03/15/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+    </entry>
+    
+  
+  
+</search>
