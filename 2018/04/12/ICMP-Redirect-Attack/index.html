@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="朝花夕拾">
 <meta property="og:description" content="原理分析ICMP协议的redirect,在某些特定的环境下,还是有些用处的。具体的可以参看:When Are ICMP Redirects SentExplanation of ICMP Redirect Behavior 由于ICMP redirect可以动态的更改host的路由,从安全角度考虑,允许accept ICMP redirect的信息话带来的弊大于利。因此在系统加固的手册中,往往都建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T09:44:00.299Z">
+<meta property="og:updated_time" content="2018-04-13T03:54:51.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ICMP Redirect Attack">
 <meta name="twitter:description" content="原理分析ICMP协议的redirect,在某些特定的环境下,还是有些用处的。具体的可以参看:When Are ICMP Redirects SentExplanation of ICMP Redirect Behavior 由于ICMP redirect可以动态的更改host的路由,从安全角度考虑,允许accept ICMP redirect的信息话带来的弊大于利。因此在系统加固的手册中,往往都建">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,427
+                  1,469
                 </span>
               
 
@@ -494,6 +494,14 @@ net.ipv6.conf.all.accept_redirects = 0
 net.ipv4.conf.all.send_redirects = 0
 </code></pre><p>然后应用内核参数配置</p>
 <pre><code>$ sudo sysctl -p
+</code></pre><p>全部相关参数：</p>
+<pre><code>net.ipv4.conf.all.accept_redirects = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
 </code></pre><p><strong>reference</strong><br><a href="http://www.cymru.com/gillsr/documents/icmp-redirects-are-bad.pdf" target="_blank" rel="noopener">http://www.cymru.com/gillsr/documents/icmp-redirects-are-bad.pdf</a><br><a href="http://sourceforge.net/projects/sing/" target="_blank" rel="noopener">http://sourceforge.net/projects/sing/</a><br><a href="http://tools.ietf.org/html/rfc792" target="_blank" rel="noopener">http://tools.ietf.org/html/rfc792</a></p>
 
       
