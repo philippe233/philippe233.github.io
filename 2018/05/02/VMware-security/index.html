@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="security,vmware," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="Technology Utopia">
-<meta property="og:type" content="website">
-<meta property="og:title" content="朝花夕拾">
-<meta property="og:url" content="./archives/2018/page/2/index.html">
+<meta name="description" content="VMware虚拟化之后，典型的部署场景是这样的,对于下面的架构也会存在安全隐患 风险点一管理员可能没有修改带外管理接口的默认密码，或者设置了弱密码、企业内众所周知的通用密码。 1、首先，要有效管理和监控大量的物理服务器，管理员必须借助服务器提供的硬件管理接口和带外管理网络才能实现。例如，惠普的iLO接口，Dell和浪潮的IPMI接口，通过一个Web或Ssh界面，都能实现服务器硬件健康状态的监控、电">
+<meta name="keywords" content="security,vmware">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VMware security">
+<meta property="og:url" content="./2018/05/02/VMware-security/index.html">
 <meta property="og:site_name" content="朝花夕拾">
-<meta property="og:description" content="Technology Utopia">
+<meta property="og:description" content="VMware虚拟化之后，典型的部署场景是这样的,对于下面的架构也会存在安全隐患 风险点一管理员可能没有修改带外管理接口的默认密码，或者设置了弱密码、企业内众所周知的通用密码。 1、首先，要有效管理和监控大量的物理服务器，管理员必须借助服务器提供的硬件管理接口和带外管理网络才能实现。例如，惠普的iLO接口，Dell和浪潮的IPMI接口，通过一个Web或Ssh界面，都能实现服务器硬件健康状态的监控、电">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/2018/05/02/VMware-security/vmware.png">
+<meta property="og:updated_time" content="2018-05-02T08:57:25.241Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朝花夕拾">
-<meta name="twitter:description" content="Technology Utopia">
+<meta name="twitter:title" content="VMware security">
+<meta name="twitter:description" content="VMware虚拟化之后，典型的部署场景是这样的,对于下面的架构也会存在安全隐患 风险点一管理员可能没有修改带外管理接口的默认密码，或者设置了弱密码、企业内众所周知的通用密码。 1、首先，要有效管理和监控大量的物理服务器，管理员必须借助服务器提供的硬件管理接口和带外管理网络才能实现。例如，惠普的iLO接口，Dell和浪潮的IPMI接口，通过一个Web或Ssh界面，都能实现服务器硬件健康状态的监控、电">
+<meta name="twitter:image" content="/2018/05/02/VMware-security/vmware.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="./archives/2018/page/2/"/>
+  <link rel="canonical" href="./2018/05/02/VMware-security/"/>
 
 
 
 
 
-  <title>归档 | 朝花夕拾</title>
+  <title>VMware security | 朝花夕拾</title>
   
 
 
@@ -143,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,226 +285,247 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="./2018/05/02/VMware-security/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Philippe Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朝花夕拾">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">VMware security</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T16:33:39+08:00">
+                2018-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/security/" itemprop="url" rel="index">
+                    <span itemprop="name">security</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/security/vmware/" itemprop="url" rel="index">
+                    <span itemprop="name">vmware</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/11/Linux-look-for-route-table/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Linux look up route</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,278
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-11T11:56:01+08:00"
-              content="2018-04-11" >
-          04-11
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/10/web-cache-basic-kb/" itemprop="url">
-              
-                <span itemprop="name">web缓存之：基础知识</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-10T17:52:49+08:00"
-              content="2018-04-10" >
-          04-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/Hexo-Learning/" itemprop="url">
-              
-                <span itemprop="name">Hexo Learning</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T21:56:48+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <p><em>VMware虚拟化之后，典型的部署场景是这样的,对于下面的架构也会存在安全隐患</em><br><img src="/2018/05/02/VMware-security/vmware.png" class="vmware"></p>
+<h3 id="风险点一"><a href="#风险点一" class="headerlink" title="风险点一"></a>风险点一</h3><p><strong>管理员可能没有修改带外管理接口的默认密码，或者设置了弱密码、企业内众所周知的通用密码。</strong></p>
+<p>1、首先，要有效管理和监控大量的物理服务器，管理员必须借助服务器提供的硬件管理接口和带外管理网络才能实现。例如，惠普的iLO接口，Dell和浪潮的IPMI接口，通过一个Web或Ssh界面，都能实现服务器硬件健康状态的监控、电源和开关、操作系统的安装、远程控制台等功能。</p>
+<h3 id="风险点二"><a href="#风险点二" class="headerlink" title="风险点二"></a>风险点二</h3><p><strong>某些ESXi Server可能使用了弱密码，后来忘了修改。所有的ESXi Server使用相同的密码，也许写在了运维手册里。</strong></p>
+<p>2、其次，在虚拟主机操作系统层面，管理员需要管理大量的ESXi Server，可能需要借助外包或驻场才能完成系统的安装和初始设置，然后才能投入使用。<br>关于弱密码实际是非常容易遇到的。</p>
+<h3 id="风险点三"><a href="#风险点三" class="headerlink" title="风险点三"></a>风险点三</h3><p><strong>ESXi Server从来没有打过补丁，可能存在安全漏洞。</strong></p>
+<p>3、再次，因为每个虚拟主机上都跑着几十上百个的虚拟客户机，使得管理员轻易做不敢对虚拟主机任何变更操作。</p>
+<h3 id="风险点四"><a href="#风险点四" class="headerlink" title="风险点四"></a>风险点四</h3><p><strong>不同管理员，操作权限的控制</strong></p>
+<p>4、再往更高的层走，到达vCenter这里<br>拿到vCenter的管理权限，便可以统治成百上千的虚拟机了。而管理成百上千台的虚拟机，肯定不是一两个人可以做得来的。也许需要按照功能区域划分给不同的人去管理，日常的变更操作也许会交给驻场团队去进行。这便涉及到账号和权限的安全问题。</p>
+<p>在主要的vCenter上，也许域控服务器就在其中，你现在可以对它进行一个热克隆操作，克隆一个离线的虚拟机，然后用vCenter的控制台去登录它，导出域数据库，通过vCenter拷贝到其它你控制的虚拟机中（例如，通过共享虚拟磁盘），再把克隆的机器删除。这个过程对于域控管理员来说，一点感知都没有，域控服务器自身也不会有任何异常的系统事件产生。</p>
+<h3 id="风险点五"><a href="#风险点五" class="headerlink" title="风险点五"></a>风险点五</h3><p><strong>外部web portal的安全问题</strong></p>
+<p>5、让我们把目光投向更远的地方，落在那个称为“云”管理平台的系统上。实际上，它可能有其它的名字，叫“云”只是时髦一点。功能是类似的，就是通过Web门户，向内部IT用户提供便捷的通道去申请、维护和销毁虚拟机资源。这是一个很自然的需求，也有很多第三方厂家去做这样的平台。这样的平台也可能存在各种安全问题。</p>
+<p>它的Web Portal账号是如何创建并管理的？它有多少个管理员权限的用户？它有没有默认密码？它的管理员账号日常是交给谁管理的？Web Portal有没有常见的Web漏洞，如SQL注入等。它后台的服务器包括数据库服务器有没有弱密码？它与vCenter、vSphere的联动是通过vCenter账号还是API Key来进行的？账号或API Key有没有加密存储？等等。</p>
+<h3 id="风险点六"><a href="#风险点六" class="headerlink" title="风险点六"></a>风险点六</h3><p><strong>通过端口扫描获取虚拟机信息</strong></p>
+<p>6、补充：VMware产品的扫描和发现<br>作为一个内部渗透人员，如果对企业环境中的VMware产品（包括vCenter、ESXi等）进行发现和识别呢？这个也是有技巧的。首先VMware产品有特定的服务端口，例如22,80,427,443,902,9875等。其次服务的banner信息，或者ssl证书信息中包含有VMware或vSphere等关键字。这样就可以使用zmap等扫描器+banner获取快速地发现网络中VMware产品。那么，如何确定vCenter与它所纳管的ESXi之间的逻辑关系呢？诀窍就是SLP协议与vpxa的API。SLP协议可以获取目标IP地址的VMware主机名、ESXi版本，例如：</p>
+<pre><code>~# /usr/bin/slptool &#39;unicastfindsrvs&#39;  10.1.12.135 &#39;service:VMwareInfrastructure&#39; 
 
-        
-        
-        
+service:VMwareInfrastructure://10.1.12.135,65535
 
-        
-        
+~# /usr/bin/slptool &#39;unicastfindattrs&#39;  10.1.12.135 &#39;service:VMwareInfrastructure&#39;
 
-        
+(product=&quot;VMware ESXi 6.0.0build-1921158&quot;),(hardwareUuid=&quot;32393735-3733-4E43-4731-313954385050&quot;)
+</code></pre><p>而vpxa API可以查询到ESXi所纳管的vCenter地址：<br>URL为：url_fmt = ‘https://%s/vpxa‘ %(ip)<br>两个SOAP请求如下：<br>    apixml1=’’’&lt;?xml version=”1.0”encoding=”UTF-8”?&gt;</p>
+<pre><code>&lt;soapenv:Envelopexmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;                                http://www.w3.org/2001/XMLSchema&quot;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+&lt;soapenv:Body&gt;&lt;QueryVpxaStatusxmlns=&quot;urn:vpxa3&quot;&gt;&lt;_this
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/Git-Learning/" itemprop="url">
-              
-                <span itemprop="name">Git Learning</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T16:46:15+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
+type=&quot;VpxapiVpxaService&quot;&gt;vpxa&lt;/_this&gt;&lt;/QueryVpxaStatus&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;&#39;&#39;&#39;
 
 
+apixml2=&#39;&#39;&#39;&lt;?xml version=&quot;1.0&quot;encoding=&quot;UTF-8&quot;?&gt;
 
+&lt;soapenv:Envelopexmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;                                 xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+
+&lt;soapenv:Body&gt;&lt;GetVpxaInfoxmlns=&quot;urn:vpxa3&quot;&gt;&lt;_thistype=&quot;VpxapiVpxaService&quot;&gt;vpxa&lt;/_this&gt;&lt;/GetVpxaInfo&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;&#39;&#39;&#39;
+</code></pre>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/30/tech-blog/" itemprop="url">
-              
-                <span itemprop="name">Tech Blog最佳实践</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-30T12:49:52+08:00"
-              content="2018-03-30" >
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/security/" rel="tag"># security</a>
+          
+            <a href="/tags/vmware/" rel="tag"># vmware</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/28/Over-The-Great-Wall/" rel="next" title="Over The Great Wall">
+                <i class="fa fa-chevron-left"></i> Over The Great Wall
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -508,6 +533,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -528,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +643,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#风险点一"><span class="nav-number">1.</span> <span class="nav-text">风险点一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险点二"><span class="nav-number">2.</span> <span class="nav-text">风险点二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险点三"><span class="nav-number">3.</span> <span class="nav-text">风险点三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险点四"><span class="nav-number">4.</span> <span class="nav-text">风险点四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险点五"><span class="nav-number">5.</span> <span class="nav-text">风险点五</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险点六"><span class="nav-number">6.</span> <span class="nav-text">风险点六</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -766,6 +820,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
