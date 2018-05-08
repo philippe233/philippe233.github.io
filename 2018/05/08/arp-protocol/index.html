@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="network," />
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="Technology Utopia">
-<meta property="og:type" content="website">
-<meta property="og:title" content="朝花夕拾">
-<meta property="og:url" content="./categories/linux/command/index.html">
+<meta name="description" content="ARP(Address Resolution Protocol)用于链路层地址发现的的协商协议。将已经分配了网络层的IPv4地址进行关联，该协议被定义在RFC 826标准中。ARP已经应用于多种不同的数据链路层的技术。例如IPv4，Chaosnet，DECnet和PUP。FDDI，X.25,Frame Relay，ATM等。 Operating scopeARP协议基于请求-响应链路层封装协议。数">
+<meta name="keywords" content="network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARP Protocol">
+<meta property="og:url" content="./2018/05/08/arp-protocol/index.html">
 <meta property="og:site_name" content="朝花夕拾">
-<meta property="og:description" content="Technology Utopia">
+<meta property="og:description" content="ARP(Address Resolution Protocol)用于链路层地址发现的的协商协议。将已经分配了网络层的IPv4地址进行关联，该协议被定义在RFC 826标准中。ARP已经应用于多种不同的数据链路层的技术。例如IPv4，Chaosnet，DECnet和PUP。FDDI，X.25,Frame Relay，ATM等。 Operating scopeARP协议基于请求-响应链路层封装协议。数">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/2018/05/08/arp-protocol/arp-payload.png">
+<meta property="og:image" content="/2018/05/08/arp-protocol/arp-spoofing.png">
+<meta property="og:updated_time" content="2018-05-08T07:02:45.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朝花夕拾">
-<meta name="twitter:description" content="Technology Utopia">
+<meta name="twitter:title" content="ARP Protocol">
+<meta name="twitter:description" content="ARP(Address Resolution Protocol)用于链路层地址发现的的协商协议。将已经分配了网络层的IPv4地址进行关联，该协议被定义在RFC 826标准中。ARP已经应用于多种不同的数据链路层的技术。例如IPv4，Chaosnet，DECnet和PUP。FDDI，X.25,Frame Relay，ATM等。 Operating scopeARP协议基于请求-响应链路层封装协议。数">
+<meta name="twitter:image" content="/2018/05/08/arp-protocol/arp-payload.png">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="./categories/linux/command/"/>
+  <link rel="canonical" href="./2018/05/08/arp-protocol/"/>
 
 
 
 
 
-  <title>分类: command | 朝花夕拾</title>
+  <title>ARP Protocol | 朝花夕拾</title>
   
 
 
@@ -143,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,55 +286,241 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>command<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="./2018/05/08/arp-protocol/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Philippe Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朝花夕拾">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/11/Linux-look-for-route-table/" itemprop="url">
-              
-                <span itemprop="name">Linux look up route</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ARP Protocol</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-11T11:56:01+08:00"
-              content="2018-04-11" >
-          04-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T14:52:42+08:00">
+                2018-05-08
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/network/" itemprop="url" rel="index">
+                    <span itemprop="name">network</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,819
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p><em>ARP(Address Resolution Protocol)用于链路层地址发现的的协商协议。将已经分配了网络层的IPv4地址进行关联，该协议被定义在RFC 826标准中。<br>ARP已经应用于多种不同的数据链路层的技术。例如IPv4，Chaosnet，DECnet和PUP。FDDI，X.25,Frame Relay，ATM等。</em></p>
+<h3 id="Operating-scope"><a href="#Operating-scope" class="headerlink" title="Operating scope"></a>Operating scope</h3><p>ARP协议基于请求-响应链路层封装协议。数据包传输的边界为单个网络，不会再夸网段范围内传输。 ARP的该特性是基于因特网协议组的数据链路层工作模式。</p>
+<h3 id="Packet-strature"><a href="#Packet-strature" class="headerlink" title="Packet strature"></a>Packet strature</h3><p>ARP使用简单消息格式包括地址解析的请求和响应包。包的大小基于上下层协议地址而决定。通常在IPv4网络协议下使用Hardware Address或virtual link address。消息报头定义了协议的类型和每个地址的大小。同事消息的头部Operation code定义了请求（1）和响应（2）。Payload中一共有4个地址，收发主机的Hardware Address和收发主机的IP地址。</p>
+<p>下图中是一个标准的ARP数据包结构。如图所示，数据包包括48位的Sender Hardware Address（SHA）和Target Hardware Address（THA），以及32位的Sender/Target Protocol Address(SPA/TPA),因此协议包总共大小为28字节，ARP的以太帧类型ID为0x0806。</p>
+<img src="/2018/05/08/arp-protocol/arp-payload.png" class="arp">
+<p><strong>Hardware type (HTYPE)</strong><br>该字段定义了网络层协议类型。 例如，以太网为1</p>
+<p><strong>Protocol type (PTYPE)</strong><br>该字段定义数据包类型为ARP协议数据包，对于IPv4中对应的值为0x8000，改字段允许与以太帧其他类型共用。</p>
+<p><strong>Hardware length (HLEN)</strong><br>Hardware Address长度，以太网中地址长度为6字节。</p>
+<p><strong>Protocol length (PLEN)</strong><br>上层协议的地址长度（上层协议类型定义在PTYPE字段），在IPv4中大小为4字节。</p>
+<p><strong>Operation</strong><br>定义消息的操作类型。1表示请求，2表示响应。</p>
+<p><strong>Sender hardware address (SHA)</strong><br>发送者的物理地址，在ARP请求包中该字段主要是用于表示请求消息的发送地址。在ARP响应包中，该字段被用于指示请求者需要查找的地址。对于交换机来说对改字段不会做任何更改只是用于MAC地址的学习。</p>
+<p><strong>Sender protocol address (SPA)</strong><br>局域网中发送者的网络地址。</p>
+<p><strong>Target hardware address (THA)</strong><br>数据包接收者的物理地址，在ARP请求包中该字段为空。在ARP响应包中该字段被用于表示原始ARP请求者的物理地址。</p>
+<p><strong>Target protocol address (TPA)</strong><br>局域网中的目标接受者网络地址。</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>主机A的IP地址为192.168.1.1，MAC地址为0A-11-22-33-44-01；</p>
+<p>主机B的IP地址为192.168.1.2，MAC地址为0A-11-22-33-44-02；</p>
+<p>当主机A要与主机B通信时，地址解析协议可以将主机B的IP地址（192.168.1.2）解析成主机B的MAC地址，以下为工作流程：</p>
+<p>第1步：根据主机A上的路由表内容，IP确定用于访问主机B的转发IP地址是192.168.1.2。然后A主机在自己的本地ARP缓存中检查主机B的匹配MAC地址。</p>
+<p>第2步：如果主机A在ARP缓存中没有找到映射，它将询问192.168.1.2的硬件地址，从而将ARP请求帧广播到本地网络上的所有主机。源主机A的IP地址和MAC地址都包括在ARP请求中。本地网络上的每台主机都接收到ARP请求并且检查是否与自己的IP地址匹配。如果主机发现请求的IP地址与自己的IP地址不匹配，它将丢弃ARP请求。</p>
+<p>第3步：主机B确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址映射添加到本地ARP缓存中。</p>
+<p>第4步：主机B将包含其MAC地址的ARP回复消息直接发送回主机A。</p>
+<p>第5步：当主机A收到从主机B发来的ARP回复消息时，会用主机B的IP和MAC地址映射更新ARP缓存。本机缓存是有生存期的，生存期结束后，将再次重复上面的过程。主机B的MAC地址一旦确定，主机A就能向主机B发送IP通信了。</p>
+<h3 id="ARP-probe"><a href="#ARP-probe" class="headerlink" title="ARP probe"></a>ARP probe</h3><p>ARP检测是一类ARP请求包，其结构为发送者的网络IP地址（SPA）为空，被用于网络中IPv4地址冲突发现，当一台主机需要使用一个IPv4地址时，可以广播ARP probe包确认该IP地址是否正在被使用。</p>
+<h3 id="ARP-announcements"><a href="#ARP-announcements" class="headerlink" title="ARP announcements"></a>ARP announcements</h3><p>ARP也当简单的消息宣告使用，可以用于更新主机IP地址与MAC地址的映射出现变更。这种ARP类型也叫做gratuitous ARP（GARP）消息。常见的情况是消息发送者通过广播自己的网络地址（SPA）到目标区域网络，并且包的Target Hardware Address(THA)为空。</p>
+<p>GARP请求消息和响应消息都是标准类型。ARP宣告并不是为了是对方产生响应消息，而是更新目标主机的的ARP Cache表。其OPeration code既可以是请求类型也可以是响应类型，因为在ARP标准中规定者这种操作只是更新ARP表。许多操作系统在系统启动阶段就可以处理GARP消息。 这有助于及时更新网络中其他设备的ARP-IP的映射表。</p>
+<pre><code>[root@localhost ~]# arp -an
+? (192.168.150.236) at 00:50:56:9d:1f:96 [ether] on eno16780032
+? (192.168.150.246) at 00:17:54:02:07:6e [ether] on eno16780032
+? (192.168.150.57) at 00:50:56:9d:6a:ee [ether] on eno16780032
+? (192.168.150.13) at 00:50:56:9d:46:1e [ether] on eno16780032
+? (192.168.150.247) at 00:17:54:02:c7:f6 [ether] on eno16780032
+? (192.168.150.3) at 00:25:90:7a:a3:63 [ether] on eno16780032
+? (192.168.150.158) at 00:50:56:b9:a7:52 [ether] on eno16780032
+? (192.168.150.155) at 00:50:56:9d:77:05 [ether] on eno16780032
+? (192.168.150.1) at 00:10:f3:5d:fa:38 [ether] on eno16780032
+? (192.168.150.245) at 74:4b:e9:01:03:6c [ether] on eno16780032
+? (192.168.150.156) at &lt;incomplete&gt; on eno16780032
+</code></pre><p>GARP有时也会用于设备网口的负载均衡，在一个借口组中，宣告不同的MAC地址在端口组中能够接受所有的数据包。</p>
+<h3 id="ARP-mediation"><a href="#ARP-mediation" class="headerlink" title="ARP mediation"></a>ARP mediation</h3><p>ARP中继用于解决二层地址需要夸越虚拟网络服务在复杂的网络环境中的问题。</p>
+<h3 id="Reverse-ARP"><a href="#Reverse-ARP" class="headerlink" title="Reverse ARP"></a>Reverse ARP</h3><p>反向ARP解析被用于获得网络层地址（IP地址）通过二层数据链路地址。最开始用户Frame Relay和ATM网络。</p>
+<p>主要是正常的网络层数据包转发时，通过ARP表查看IP-&gt;MAC决定转发的端口，但是有时数据报需要通过ARP表查看其MAC地址对应的网络地址，然后决定路由情况。</p>
+<h3 id="Proxy-ARP（ARP-spoofing）"><a href="#Proxy-ARP（ARP-spoofing）" class="headerlink" title="Proxy ARP（ARP spoofing）"></a>Proxy ARP（ARP spoofing）</h3><p>因为ARP协议并没有提供ARP响应的认证方法，所有ARP响应可以不是从真实的物理地址主机产生。ARP Proxy是一个主机响应ARP请求在真实的主机之前，常见是在拨号上网的情况下出现，另外对于ARP spoofing响应，利用ARP协议截获ARP请求包并对请求主机响应消息。黑客可以通过这种使用ARP spoofing这种方法扮演中间人的角色，获取传输过程的数据包。</p>
+<img src="/2018/05/08/arp-protocol/arp-spoofing.png" class="arp">
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/network/" rel="tag"># network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/02/web-security-learning/" rel="next" title="Web安全学习计划">
+                <i class="fa fa-chevron-left"></i> Web安全学习计划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +528,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -357,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -434,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Operating-scope"><span class="nav-number">1.</span> <span class="nav-text">Operating scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-strature"><span class="nav-number">2.</span> <span class="nav-text">Packet strature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">3.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP-probe"><span class="nav-number">4.</span> <span class="nav-text">ARP probe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP-announcements"><span class="nav-number">5.</span> <span class="nav-text">ARP announcements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP-mediation"><span class="nav-number">6.</span> <span class="nav-text">ARP mediation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-ARP"><span class="nav-number">7.</span> <span class="nav-text">Reverse ARP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy-ARP（ARP-spoofing）"><span class="nav-number">8.</span> <span class="nav-text">Proxy ARP（ARP spoofing）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -595,6 +815,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
