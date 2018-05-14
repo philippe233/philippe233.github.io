@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what’s DNS tunnelDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 DNS Q">
+<meta name="description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
 <meta name="keywords" content="network,security,dns">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dns tunnel">
+<meta property="og:title" content="dns tunneling">
 <meta property="og:url" content="./2018/05/14/dns-tunnel/index.html">
 <meta property="og:site_name" content="朝花夕拾">
-<meta property="og:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what’s DNS tunnelDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 DNS Q">
+<meta property="og:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-tunneling-sample.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-query.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-tunnel.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-payload.png">
-<meta property="og:updated_time" content="2018-05-14T09:28:10.539Z">
+<meta property="og:updated_time" content="2018-05-14T09:30:56.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dns tunnel">
-<meta name="twitter:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what’s DNS tunnelDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 DNS Q">
+<meta name="twitter:title" content="dns tunneling">
+<meta name="twitter:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
 <meta name="twitter:image" content="/2018/05/14/dns-tunnel/dns-tunneling-sample.png">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title>dns tunnel | 朝花夕拾</title>
+  <title>dns tunneling | 朝花夕拾</title>
   
 
 
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">dns tunnel</h1>
+          <h1 class="post-title" itemprop="name headline">dns tunneling</h1>
         
 
         <div class="post-meta">
@@ -435,12 +435,12 @@
       
         <p><em>最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？</em></p>
 <img src="/2018/05/14/dns-tunnel/dns-tunneling-sample.png" class="dnstunnelingsample">
-<h3 id="what’s-DNS-tunnel"><a href="#what’s-DNS-tunnel" class="headerlink" title="what’s DNS tunnel"></a>what’s DNS tunnel</h3><p>DNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。</p>
+<h3 id="what-is-DNS-tunneling"><a href="#what-is-DNS-tunneling" class="headerlink" title="what is DNS tunneling"></a>what is DNS tunneling</h3><p>DNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。</p>
 <h4 id="DNS-Query"><a href="#DNS-Query" class="headerlink" title="DNS Query"></a>DNS Query</h4><p>DNS协议使用的端口为53(TCP/UDP),一般在进行DNS解析的时候通常使用的是UDP协议,但是在主服务器向备服务器同步数据的时候通常使用的是TCP协议.先看DNS查询过程：</p>
 <img src="/2018/05/14/dns-tunnel/dns-query.png" class="dnsquery">
 <p>当你需要访问某个服务器时，需要知道其域名对应的服务器地址。你可以使用Local/Public DNS服务器，向这个服务器的53端口发送查询请求，比如abc.sample.com。这台DNS服务器上如果没有abc.sample.com记录缓存，那么它将向Root DNS查询包括sample.com的DNS服务器地址。root DNS查看是sample.com的域名，就交给包括sample.com域名服务器进行解析。看看它有没有这条记录。sample.com的域名服务器上收到请求后，查看是abc.sample.com，如果它有这条A记录，那么就会返回abc.sample.com的地址。</p>
 <h4 id="Tunnel"><a href="#Tunnel" class="headerlink" title="Tunnel"></a>Tunnel</h4><p>所谓 tunnel 就是把下一层（比如IPv4层）的包封装到上一层（比如 SSH，HTTP）或者同一层（比如IPv6层）的协议中进行传输，从而实现网络之间的穿透。发送端和接收端各有一个解析和封装这种包的程序或者内核模块，将数据通过其他比较常用的通讯协议进行传输。常见的Tunnel有基于SSH或HTTPS的tunnel方式，这两种方式既是常用的通讯协议，又是基于加密的安全方式通讯。</p>
-<h4 id="DNS-Tunnel"><a href="#DNS-Tunnel" class="headerlink" title="DNS Tunnel"></a>DNS Tunnel</h4><p><strong>DNS隧道技术简单来说就是将网络流量封装成DNS流量,以DNS查询的方式将数据传输到服务器上，服务器再通过DNS查询结果的方式响应客户的请求。这里的流量封装通常由一个客户端来完成,Tunnel服务器将封装的DNS流量还原成正常的流量.</strong></p>
+<h4 id="DNS-Tunneling"><a href="#DNS-Tunneling" class="headerlink" title="DNS Tunneling"></a>DNS Tunneling</h4><p><strong>DNS隧道技术简单来说就是将网络流量封装成DNS流量,以DNS查询的方式将数据传输到服务器上，服务器再通过DNS查询结果的方式响应客户的请求。这里的流量封装通常由一个客户端来完成,Tunnel服务器将封装的DNS流量还原成正常的流量.</strong></p>
 <img src="/2018/05/14/dns-tunnel/dns-tunnel.png" class="dnstunnel">
 <p>在复杂和较为安全的网络环境中,防守方对内部网络出去的流量是有严格的控制的,一般通过防火墙来实现,攻击者拿到内网机器的权限后如果想保持长久的对目标的控制并且不被发现,难度是比较大的,因为一些敏感操作(比如:执行命令、内部数据外传等)可能会触犯防火墙或者安全设备的规则,有时候拿下一台机器容易,但是长久控制就比较难.</p>
 <p>如果你在互联网上有台定制的服务器。只要依靠 DNS 的这层约定，就可以交换数据包了。从 DNS 协议上看，你是在一次次的查询某个特定域名，并得到解析结果。但实际上，你在和外部通讯。你没有直接连到局域网外的机器，因为防火墙不会转发你的 IP 包出去。但局域网上的 DNS 服务器帮你做了中转。这就是 DNS Tunnel了。通过DNS Tunnel可以比较好的维持对目标的长期控制并且不易被发现.DNS隧道将所有流量进行封装,通过DNS请求传送出去,一般的安全设备和软件不会对DNS请求进行详细的检查,攻击者通过将payload加密隐藏在url中进行发送,DNS服务器递归查询,最终到达攻击者的服务端解密,服务端也可以下发指令给客户端,客户端解密之后执行控制端的命令.客户端会给服务端发送心跳包,以此来检测服务端是否有指令下发.</p>
@@ -640,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#what’s-DNS-tunnel"><span class="nav-number">1.</span> <span class="nav-text">what’s DNS tunnel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Query"><span class="nav-number">1.1.</span> <span class="nav-text">DNS Query</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tunnel"><span class="nav-number">1.2.</span> <span class="nav-text">Tunnel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Tunnel"><span class="nav-number">1.3.</span> <span class="nav-text">DNS Tunnel</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-tunnel-implement-tools"><span class="nav-number">2.</span> <span class="nav-text">DNS tunnel implement tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting-DNS-Tunneling"><span class="nav-number">3.</span> <span class="nav-text">Detecting DNS Tunneling</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-DNS-tunneling"><span class="nav-number">1.</span> <span class="nav-text">what is DNS tunneling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Query"><span class="nav-number">1.1.</span> <span class="nav-text">DNS Query</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tunnel"><span class="nav-number">1.2.</span> <span class="nav-text">Tunnel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Tunneling"><span class="nav-number">1.3.</span> <span class="nav-text">DNS Tunneling</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-tunnel-implement-tools"><span class="nav-number">2.</span> <span class="nav-text">DNS tunnel implement tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting-DNS-Tunneling"><span class="nav-number">3.</span> <span class="nav-text">Detecting DNS Tunneling</span></a></li></ol></div>
             
 
           </div>
