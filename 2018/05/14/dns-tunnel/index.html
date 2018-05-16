@@ -91,7 +91,7 @@
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-query.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-tunnel.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-payload.png">
-<meta property="og:updated_time" content="2018-05-16T10:34:17.840Z">
+<meta property="og:updated_time" content="2018-05-16T10:36:58.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dns tunneling">
 <meta name="twitter:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
@@ -470,7 +470,7 @@ dns0: flags=4305&lt;UP,POINTOPOINT,RUNNING,NOARP,MULTICAST&gt;  mtu 1130
 </code></pre><p><strong>[Client]</strong></p>
 <pre><code># yum -y install iodine-client
 
-# iodine -f -r 192.158.0.1 -P SecretPassword tunnel.barracudachina.com   (Replace 192.168.0.1 with your server&#39;s ip address.)
+# iodine -f -r 192.158.0.1 -P SecretPassword tunnel.barracudachina.com   (Replace 192.168.0.1 with your server&#39;s ip address)
 Opened dns0
 Opened IPv4 UDP socket
 Sending DNS queries for tunnel.barracudachina.com to 192.168.150.158
