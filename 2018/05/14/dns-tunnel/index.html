@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="network,security,dns," />
+  <meta name="keywords" content="security,network,dns," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
-<meta name="keywords" content="network,security,dns">
+<meta name="keywords" content="security,network,dns">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dns tunneling">
 <meta property="og:url" content="./2018/05/14/dns-tunnel/index.html">
@@ -91,7 +91,7 @@
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-query.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-tunnel.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-payload.png">
-<meta property="og:updated_time" content="2018-05-14T09:30:56.269Z">
+<meta property="og:updated_time" content="2018-05-16T10:34:17.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dns tunneling">
 <meta name="twitter:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,099
+                  1,766
                 </span>
               
 
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  8
                 </span>
               
             </div>
@@ -447,7 +447,81 @@
 <img src="/2018/05/14/dns-tunnel/dns-payload.png" class="dnspayload">
 <h3 id="DNS-tunnel-implement-tools"><a href="#DNS-tunnel-implement-tools" class="headerlink" title="DNS tunnel implement tools"></a>DNS tunnel implement tools</h3><p>DNS tunnel实现的工具有很多，比如：OzymanDNS、tcp-over-dns、heyoka、iodine、dns2tcp</p>
 <p>Win7平台：<a href="https://github.com/iagox86/dnscat2" target="_blank" rel="noopener">dns2tcp</a><br>Linux平台：<a href="https://github.com/yarrick/iodine" target="_blank" rel="noopener">iodine</a></p>
-<p>(未完,待续)</p>
+<p>本文介绍基于Linux(CentOS)平台下iodine软件的实现方法.</p>
+<h4 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h4><p>域名：barracudachina.com<br>主机Linux两台：CentOS 7<br>Tunnel软件：iodine</p>
+<h4 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h4><p><strong>[Server]</strong></p>
+<pre><code># yum -y install iodine-server
+
+# iodined -f 10.0.0.1 -P SecretPassword tunnel.barracudachina.com
+Opened dns0
+Setting IP of dns0 to 10.0.0.1
+Setting MTU of dns0 to 1130
+Opened IPv4 UDP socket
+Listening to dns for domain tunnel.barracudachina.com
+
+# ifconfig
+dns0: flags=4305&lt;UP,POINTOPOINT,RUNNING,NOARP,MULTICAST&gt;  mtu 1130
+        inet 10.0.0.1  netmask 255.255.255.224  destination 10.0.0.1
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 59  bytes 4956 (4.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 59  bytes 4956 (4.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre><p><strong>[Client]</strong></p>
+<pre><code># yum -y install iodine-client
+
+# iodine -f -r 192.158.0.1 -P SecretPassword tunnel.barracudachina.com   (Replace 192.168.0.1 with your server&#39;s ip address.)
+Opened dns0
+Opened IPv4 UDP socket
+Sending DNS queries for tunnel.barracudachina.com to 192.168.150.158
+Autodetecting DNS query type (use -T to override).
+Using DNS type NULL queries
+Version ok, both using protocol v 0x00000502. You are user #0
+Setting IP of dns0 to 10.0.0.2
+Setting MTU of dns0 to 1130
+Server tunnel IP is 10.0.0.1
+Skipping raw mode
+Using EDNS0 extension
+Switching upstream to codec Base128
+Server switched upstream to codec Base128
+No alternative downstream codec available, using default (Raw)
+Switching to lazy mode for low-latency
+Server switched to lazy mode
+Autoprobing max downstream fragment size... (skip with -m fragsize)
+768 ok.. 1152 ok.. ...1344 not ok.. ...1248 not ok.. ...1200 not ok.. 1176 ok.. 1188 ok.. will use 1188-2=1186
+Setting downstream fragment size to max 1186...
+Connection setup complete, transmitting data.
+
+# ifconfig
+dns0: flags=4305&lt;UP,POINTOPOINT,RUNNING,NOARP,MULTICAST&gt;  mtu 1130
+        inet 10.0.0.2  netmask 255.255.255.224  destination 10.0.0.2
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre><p><strong>[DNS]</strong><br>在域名解析商的网站上，设置一条barracudachina.com的子域tunnel.barracudachina.com的NS记录：</p>
+<pre><code>tunnel.barracudachina.com. 600  IN      NS      ns10.barracudachina.com.
+</code></pre><p>另外，再设置ns10.barracudachina.com的A记录指向上面的<strong>[Server]</strong>地址</p>
+<pre><code>ns10.barracudachina.com. 600    IN      A       101.231.149.69
+</code></pre><p><strong>[Test]</strong></p>
+<pre><code># dig -t TXT z456.tunnel.barracudachina.com
+z456.tunnel.barracudachina.com. 300 IN  TXT     &quot;tpi0dknro&quot;
+
+# dig -t SRV z456.tunnel.barracudachina.com
+z456.tunnel.barracudachina.com. 300 IN  SRV     10 10 5060 hpi0dknro.nx.
+
+# dig -t CNAME z456.tunnel.barracudachina.com
+z456.tunnel.barracudachina.com. 300 IN  CNAME   hpi0dknro.qf.
+</code></pre><p>以上解析测试可以证明<strong>[DNS]</strong>解析和<strong>[Server]</strong>设置已经完成。</p>
+<pre><code># ping 10.0.0.1
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=1.54 ms
+64 bytes from 10.0.0.1: icmp_seq=2 ttl=64 time=1.13 ms
+64 bytes from 10.0.0.1: icmp_seq=3 ttl=64 time=1.00 ms
+</code></pre><p>改设置说明<strong>[Client]</strong>与<strong>[Server]</strong>之间的Tunnel已经建立成功。</p>
+<p><strong>PS</strong>:<br>以上设置有任何疑问可以通过<a href="https://github.com/yarrick/iodine" target="_blank" rel="noopener">点击</a>确认可能出现错误的原因。</p>
+<p>DNS Tunnel数据包<a href="https://github.com/philippe233/dus-tunnel-capture.git" target="_blank" rel="noopener">样本</a></p>
 <h3 id="Detecting-DNS-Tunneling"><a href="#Detecting-DNS-Tunneling" class="headerlink" title="Detecting DNS Tunneling"></a>Detecting DNS Tunneling</h3><p>(<a href="https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152" target="_blank" rel="noopener">https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152</a>)</p>
 <p>(未完,待续)</p>
 
@@ -467,9 +541,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/network/" rel="tag"># network</a>
-          
             <a href="/tags/security/" rel="tag"># security</a>
+          
+            <a href="/tags/network/" rel="tag"># network</a>
           
             <a href="/tags/dns/" rel="tag"># dns</a>
           
@@ -640,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-DNS-tunneling"><span class="nav-number">1.</span> <span class="nav-text">what is DNS tunneling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Query"><span class="nav-number">1.1.</span> <span class="nav-text">DNS Query</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tunnel"><span class="nav-number">1.2.</span> <span class="nav-text">Tunnel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Tunneling"><span class="nav-number">1.3.</span> <span class="nav-text">DNS Tunneling</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-tunnel-implement-tools"><span class="nav-number">2.</span> <span class="nav-text">DNS tunnel implement tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting-DNS-Tunneling"><span class="nav-number">3.</span> <span class="nav-text">Detecting DNS Tunneling</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-DNS-tunneling"><span class="nav-number">1.</span> <span class="nav-text">what is DNS tunneling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Query"><span class="nav-number">1.1.</span> <span class="nav-text">DNS Query</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tunnel"><span class="nav-number">1.2.</span> <span class="nav-text">Tunnel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-Tunneling"><span class="nav-number">1.3.</span> <span class="nav-text">DNS Tunneling</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-tunnel-implement-tools"><span class="nav-number">2.</span> <span class="nav-text">DNS tunnel implement tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tools"><span class="nav-number">2.1.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Operations"><span class="nav-number">2.2.</span> <span class="nav-text">Operations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting-DNS-Tunneling"><span class="nav-number">3.</span> <span class="nav-text">Detecting DNS Tunneling</span></a></li></ol></div>
             
 
           </div>
