@@ -91,7 +91,7 @@
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-query.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-tunnel.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-payload.png">
-<meta property="og:updated_time" content="2018-05-16T10:36:58.270Z">
+<meta property="og:updated_time" content="2018-05-18T04:04:51.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dns tunneling">
 <meta name="twitter:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelingDNS tunnel 即 DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 D">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,766
+                  2,388
                 </span>
               
 
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  10
                 </span>
               
             </div>
@@ -522,7 +522,10 @@ PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
 </code></pre><p>改设置说明<strong>[Client]</strong>与<strong>[Server]</strong>之间的Tunnel已经建立成功。</p>
 <p><strong>PS</strong>:<br>以上设置有任何疑问可以通过<a href="https://github.com/yarrick/iodine" target="_blank" rel="noopener">点击</a>确认可能出现错误的原因。</p>
 <p>DNS Tunnel数据包<a href="https://github.com/philippe233/dus-tunnel-capture.git" target="_blank" rel="noopener">样本</a></p>
-<h3 id="Detecting-DNS-Tunneling"><a href="#Detecting-DNS-Tunneling" class="headerlink" title="Detecting DNS Tunneling"></a>Detecting DNS Tunneling</h3><p>(<a href="https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152" target="_blank" rel="noopener">https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152</a>)</p>
+<h3 id="Detecting-DNS-Tunneling"><a href="#Detecting-DNS-Tunneling" class="headerlink" title="Detecting DNS Tunneling"></a>Detecting DNS Tunneling</h3><p>因为DNS协议使用的目的并不是用来传输数据的，其更主要的还是为了网站浏览和邮件等重要协议的工作存在。也正式这个原因，许多公司或组织往往会放行所有的DNS端口不做任何的监控。大部分企业将更多的资源专注于web或email的攻击，而忽略了通过DNS进行攻击的行为。例如最常见的当WIFI开启了http的portal进行身份验证后，通过DNS Tunnel获取免费的WIFI上网权限。也有攻击者通过建立DNS Tunnel获得远程控制主机权限，获取通过DNS Tunnel非法上传公司内部重要数据。</p>
+<p>最后要说明一下的技术是将数据进行编码（encode）在DNS的payload中。关于encode涉及的范围非常广如果想做更多的了解可以参考我之前的文档（<a href="https://www.hopeline.cn/2018/04/23/encoding/" target="_blank" rel="noopener">encoding彻底理解字符编码</a>,<a href="https://www.hopeline.cn/2018/04/24/base64/" target="_blank" rel="noopener">base64编码</a>）。简单来说，当一个Client想要将数据发送给Server, Client会先把数据进行编码放在DNS payload中。例如Client可以发其域名为“MRZGS3TLEBWW64TFEBXXMYLMORUW4ZI.t.example.com”的A记录查询请求，然后Server返回“NVWW2IDPOZQWY5DJNZSQ.t.example.com”的CNAME的响应。这样数据以encode的方式发送给了Server，Server同时也响应了Client一些数据。这种通讯方式Server无法做到主动发起到客户的的连接，因为客户的并没有办法监听DNS请求的服务，并且大多数厂家是Client部署在防火墙后面。Server想要完成控制发起到Client的通讯只能由客户端定期的检测到Serve的连接，然后Server通过响应数据包的方式去更改客户的的请求方式。</p>
+<p>目前有很多工具可以实现DNS Tunnel，实现的方法也不近相同，有些工具通过在本地创建tap虚拟网卡并配置一个IP，服务器跟客户端建立了一个tunnel，所有tunnel数据封装在DNS请求和响应中传输。也有工具通过将数据直接以二进制数据的方式直接封装在DNS的请求和响应中。DNS请求类型也会不同，有的工具采用A记录方式，有的直接以Null的类型。封装在DNS中的数据encode格式也不太一样，像dns2tcp使用Base64编码，但是iodine又使用非标准的Base64编码格式…</p>
+<p>DNS[<a href="https://www2.cs.duke.edu/courses/fall16/compsci356/DNS/DNS-primer.pdf" target="_blank" rel="noopener">数据包结构</a>]<br>(<a href="https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152" target="_blank" rel="noopener">https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152</a>)</p>
 <p>(未完,待续)</p>
 
       
