@@ -91,7 +91,7 @@
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-query.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-tunnel.png">
 <meta property="og:image" content="/2018/05/14/dns-tunnel/dns-payload.png">
-<meta property="og:updated_time" content="2018-05-21T09:40:49.005Z">
+<meta property="og:updated_time" content="2018-05-22T04:05:21.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dns tunneling">
 <meta name="twitter:description" content="最经常碰到用户反馈，我们的反垃圾邮件网关总是向一些奇怪的地址做DNS查询请求，被防火墙检测出可能是DNS Tunnel的情况。从我们反垃圾邮件网关工作原理来说，确实会用到比较多的DNS查询来实现过滤的功能，但是该过滤功能跟DNS Tunnel是否有联系呢？  what is DNS tunnelDNS tunnel即DNS隧道。从名字上来看就是利用DNS查询过程建立起隧道，传输数据。 简单来说，当">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,720
+                  3,719
                 </span>
               
 
@@ -539,14 +539,14 @@ PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
 <h5 id="Uncommon-Record-Types"><a href="#Uncommon-Record-Types" class="headerlink" title="Uncommon Record Types"></a>Uncommon Record Types</h5><p>检查请求的记录类型为不是非常用的类型，例如请求类型为TXT记录。</p>
 <h5 id="Policy-Violation"><a href="#Policy-Violation" class="headerlink" title="Policy Violation"></a>Policy Violation</h5><p>如果设置一个策略要求所有DNS查询必须通过内部DNS Server，这种强制策略可以用于做检测DNS Tunnel，所有到Internet的DNS流量都可以被监控到，因为大部分DNS Tunnel工具都可以正常工作即使通过内网DNS Server转发的请求。</p>
 <h5 id="Specific-Signatures"><a href="#Specific-Signatures" class="headerlink" title="Specific Signatures"></a>Specific Signatures</h5><p>有些研究者提供了特征码为一些特定的DNS Tunnel工具，通过DNS数据包头部的特殊字段识别。例如Snort Signature被开发出来用于检测NSTX DNS Tunnel。<br>    alert udp $EXTERNAL_NET any -&gt; $HOME_NET 53 (msg:”Potential NSTX DNS<br>    Tunneling”; content:”|01 00|”; offset:2; within:4; content:”cT”;<br>    offset:12; depth:3; content:”|00 10 00 01|”; within:255; classtype:badunknown;<br>    sid:1000 2;)</p>
-<h4 id="Traffic-Analysis"><a href="#Traffic-Analysis" class="headerlink" title="Traffic Analysis"></a>Traffic Analysis</h4><p>流量分析指的是通过查看一个时间段的多个请求/响应对，这个数量和频率可以查看是否包括DNS Tunnel，这种技术方法主要博包括如下：</p>
+<h4 id="Traffic-Analysis"><a href="#Traffic-Analysis" class="headerlink" title="Traffic Analysis"></a>Traffic Analysis</h4><p>流量分析指的是通过查看一个时间段的多个请求/响应，这个数量和频率可以查看是否包括DNS Tunnel，这种技术方法主要包包括如下：</p>
 <h5 id="Volume-of-DNS-traffic-per-IP-address"><a href="#Volume-of-DNS-traffic-per-IP-address" class="headerlink" title="Volume of DNS traffic per IP address"></a>Volume of DNS traffic per IP address</h5><p>一个比较直接的方法检查基于单个特定的Client IP的DNS流量，因为Tunnel的请求数据包大小一般限制在512字节，需要大量的请求包保持连接，并且如果Client建立了到Server的连接，那么会持续发送请求包。</p>
 <h5 id="Volume-of-DNS-traffic-per-domain"><a href="#Volume-of-DNS-traffic-per-domain" class="headerlink" title="Volume of DNS traffic per domain"></a>Volume of DNS traffic per domain</h5><p>基于某个特定域的DNS流量分析是不是有特别大。DNS Tunnel需要设置一个域名来转发数据，所有转发到该DNS Tunnel的数据都会使用这个域。当然也有可能会使用多个域的情况，这样分到每个域的流量就小了。</p>
 <h5 id="Number-of-hostnames-per-domain"><a href="#Number-of-hostnames-per-domain" class="headerlink" title="Number of hostnames per domain"></a>Number of hostnames per domain</h5><p>统计一个给定的域名包括的hostname的数量，DNS Tunnel工具每次请求的hostname都不一样，这个比典型合法的域名要多很多，这是要很有效的流量分析方法。</p>
 <h5 id="Geographic-location-of-DNS-server"><a href="#Geographic-location-of-DNS-server" class="headerlink" title="Geographic location of DNS server"></a>Geographic location of DNS server</h5><p>将地理位置作为一个考虑因素也会被使用，很多DNS的流量都是没有实际商业用途，如果企业不是遍布全球的话，那么这个方法很实用。</p>
 <h5 id="Domain-history"><a href="#Domain-history" class="headerlink" title="Domain history"></a>Domain history</h5><p>域名历史也是可以用于提升识别DNS流量的方法，检查他们的A记录或者NS记录添加的情况，这个也常被用于检测一些恶意攻击行为，跟DNS Tunnel也相关。如果一个域名NS记录最近才被添加那么很有可能是用户DNS Tunnel的目的。</p>
-<h5 id="Orphan-DNS-requests"><a href="#Orphan-DNS-requests" class="headerlink" title="Orphan DNS requests"></a>Orphan DNS requests</h5><p>孤立的DNS请求，以上的这些方法都是基于我们能看到的流量进行分析。另外一种途径是预测我们可以看到的情况。通常DNS请求是被其他的请求的附加行为，例如Web请求，这种预测可以很容易过滤出来。安全设备可以会使用DNS反向查询，反垃圾邮件通过DNS查询确定一个给定的IP地址是不是在黑名单中，中断安全产品使用包括一个FQDN hash码的DNS查询检查信誉库或可疑的文件。</p>
-<h5 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h5><p>查看NSDomain响应数量，流量模型化(Visualization)。</p>
+<h5 id="Orphan-DNS-requests"><a href="#Orphan-DNS-requests" class="headerlink" title="Orphan DNS requests"></a>Orphan DNS requests</h5><p>孤立的DNS请求，以上的这些方法都是基于我们能看到的流量进行分析。另外一种途径是预测我们可以看到的情况。通常DNS请求是被其他的请求的附加行为，例如Web请求，这种预测可以很容易过滤出来。安全设备可以会使用DNS反向查询，反垃圾邮件通过DNS查询确定一个给定的IP地址是不是在黑名单中，终端安全产品使用包括一个FQDN hash码的DNS查询检查信誉库或可疑的文件。</p>
+<h5 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h5><p>查看NSDomain响应数量，流量可视化(Visualization)。</p>
 <p>DNS[<a href="https://www2.cs.duke.edu/courses/fall16/compsci356/DNS/DNS-primer.pdf" target="_blank" rel="noopener">数据包结构</a>]<br>DNS Tunnel数据包<a href="https://github.com/philippe233/dus-tunnel-capture.git" target="_blank" rel="noopener">样本</a><br>(<a href="https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152" target="_blank" rel="noopener">https://www.sans.org/reading-room/whitepapers/dns/detecting-dns-tunneling-34152</a>)</p>
 
       
